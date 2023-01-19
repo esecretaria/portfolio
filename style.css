@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 1000px;
+    background: #101010;
+
+
+}
+
+p{
+    font-size: 18px;
+    color: #fff;
+    margin-top: 25px;
+    width:  65%;
+    line-height: 40px;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 0 100px;
+    background: #000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: 1s;
+    z-index: 1;
+}
+
+header.sticky{
+    height: 80px;
+}
+
+header .banner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1s;
+}
+
+header.sticky .banner{
+    opacity: 0.5;
+}
+
+header .logo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 12vw;
+    color: #fff;
+    font-weight: 700;
+    transition: 1s;
+    text-decoration: none;
+    z-index: 1;
+}
+
+#typed-banner{
+    display: flex;
+}
+.typed { 
+    color: #fff;
+    font-size: 1em;
+    font-weight: 600;
+    white-space: nowrap;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 10px #00b3ff,
+                 0 0 20px #00b3ff,
+                 0 0 40px #00b3ff,
+                 0 0 80px #00b3ff,
+                 0 0 120px #00b3ff;       
+}
+
+#typed2 {
+    margin-top: 0;
+    align-self: center;
+    color: #fff;
+    line-height: 35px;
+    font-size: 18%;
+    text-align: left;
+    font-family: "Courier New", "Lucida Console", monospace;
+    vertical-align: text-bottom;
+    /*letter-spacing: 0.1rem;*/
+    text-shadow: 0 0 5px #2E0249,
+                 0 0 10px #2E0249,
+                 0 0 20px #2E0249;
+}
+
+
+header.sticky .logo{
+    position: absolute;
+    font-size: 2em;
+    left: 100px;
+    transform: translate(0%,-50%);
+}
+
+
+nav{
+    position: relative;
+    display: flex;
+    z-index: 1;
+}
+
+nav ul{
+    position: relative;
+    display: flex;
+    transition: 0.25s;
+    transform: translateX(100px);
+    opacity: 0;
+}
+
+header.sticky nav ul{
+    transform: translateX(0);
+    opacity: 1;  
+    transition-delay: 0.75s;   
+    visibility: visible;
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    color: #fff;
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    color: #ff275f;
+}
+
+.spacer{
+    background: transparent;
+    padding: 100px;
+}
+
+section{
+    padding: 150px 100px 100px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+
+
+
+section p{
+  text-align: center;
+}
+
+section h1{
+    font-size: 40px;
+    color:  #fff;
+    text-shadow: 0 0 10px #00b3ff,
+                 0 0 20px #00b3ff,
+                 0 0 40px #00b3ff;     
+}
+
+hr{
+    border: dotted #fff 6px;
+    border-bottom: none;
+    width: 4%;
+    margin: auto;
+}
+
+div.container-works {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    max-width: 60%;
+    flex-wrap: wrap;
+}
+
+div.container-works img{
+    width: 300px;
+    height: 260px;
+    padding: 5px;
+    object-fit: contain;
+    object-position: center;
+    opacity: 0.5;
+}
+
+div.container-works img:hover {
+    cursor: pointer;
+    opacity: 1;
+    box-shadow: 0 0 10px #00b3ff,
+                 0 0 20px #00b3ff,
+                 0 0 40px #00b3ff,
+                 0 0 80px #00b3ff,
+                 0 0 120px #00b3ff;  
+}
+
+
+@media (max-width: 991px){
+    header{
+        padding: 40px;
+    }
+
+    section h1{
+        font-size: 25px;
+    }
+
+    section h2{
+        font-size: 2em;
+    }
+
+    section {
+        padding: 150px 0 100px 0; 
+    }  
+
+    hr{
+        width: 10%;  
+    }
+      
+    header.sticky .logo{
+        left: 40px;
+    }
+    header.sticky .banner{
+        opacity: 0;
+    }
+    nav ul{
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+    nav.active ul{
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 80px);
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    nav ul li a{
+        font-size: 2.5em;
+        padding: 20px 15px;
+    }
+    header.sticky .toggle{
+        position: fixed;
+        top: 20px;
+        right: 40px;
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
+        background: #fff url(menu.png);
+        background-size: 16px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    header.sticky .toggle.active{
+        background: #fff url(close.png);
+        background-size: 18px;
+        background-repeat: no-repeat;
+        background-position: center;        
+    }
+
+    .spacer {
+        padding: 40px;
+    }
+
+    div.container-works img{
+        padding: 0 5px; 
+    }
+
+    p {
+        font-size: 13px;
+        line-height: 30px;   
+    }
+}
+
+
+
+.contact{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact .content{
+    text-align: center;
+}
+
+.contact .content h2{
+    font-size: 36px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+}
+
+.contact .content p{
+    font-weight: 300;
+    color: #fff;
+    margin: auto;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.container .contactInfo{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    z-index: -1;
+}
+
+.container .contactInfo .box{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+.container .contactInfo .box .icon{
+    min-width: 60px;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+.container .contactInfo .box .text{
+    margin-left: 20px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 300;
+    position: relative;
+}
+
+.container .contactInfo .box .text h3{
+    font-weight: 500;
+    color: red;
+    margin-bottom: 0;
+}
+
+.text p{
+    margin-top: 0;
+    text-align: left;
+}
+
+.contactForm{
+    width: 40%;
+    padding: 40px;
+    background: #fff;
+    border-radius: 20px;
+    /*z-index: -1;*/
+}
+
+.contactForm h2{
+    font-size: 30px;
+    color: green;
+    font-weight: 500;
+}
+
+.contactForm .inputBox{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.contactForm .inputBox input,
+.contactForm .inputBox textarea{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+}
+
+.contactForm .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;    
+    transition: 0.5s;
+    color: #666;
+}
+
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span{
+    color: #e91e63;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+
+.contactForm .inputBox input[type="submit"]{
+    width: 100px;
+    background: #00bcd4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+}
+
+@media (max-width: 991px){
+    .contact{
+        padding: 100px 50px 50px 50px;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .container .contactInfo{
+        margin-bottom: 40px;
+    }
+    .container .contactInfo, .contactForm{
+        width: 100%;
+    }
+    .container .contactInfo .box .icon {
+        min-width: 50px;
+        height: 50px; 
+    }
+}
+
+
+
+footer{
+    display: flex;
+    align-items: center;
+}
+
+.footer-container{
+    margin: auto;
+    color: #fff;
+}
+
+.social-icon {
+  margin: 8px;
+}
+
+footer p{
+    margin:auto;
+    width: 100%;
+}
+
